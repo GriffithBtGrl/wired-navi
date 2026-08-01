@@ -2,21 +2,44 @@
 import { useState, useRef } from 'react'
 import { motion, useInView } from 'framer-motion'
 import richardImg from '../assets/httpsrichardpereznetlifyapp.jpeg'
+import weltschmerzImg from '../assets/weltschmerz.jpg'
+import matcargoImg from '../assets/matcargo.jpg'
 
 const projects = [
   {
     id: 1,
     title: 'Sistema de captación de clientes para entrenador personal',
     tags: ['HTML', 'CSS', 'JavaScript', 'SEO'],
-    niche: 'fitness',
     problem: 'El negocio no contaba con una estructura digital clara para captar clientes, lo que generaba pérdida constante de oportunidades y baja conversión.',
-    solution: 'Se desarrolló una página optimizada para captación de clientes, con estructura enfocada en conversión, integración de contacto directo y mejora del flujo de decisión del usuario.',
+    solution: 'Página optimizada para captación de clientes, con estructura enfocada en conversión, integración de contacto directo y mejora del flujo de decisión del usuario.',
     image: richardImg,
     demo: 'https://richardperez.netlify.app/',
     code: 'https://github.com/GriffithBtGrl/richard-perez-preparador-fisico',
     year: '2025',
   },
-  // Agrega más proyectos aquí
+  {
+    id: 2,
+    title: 'Weltschmerz — Foro anónimo dark cyberpunk',
+    tags: ['React', 'Node.js', 'PostgreSQL', 'Express'],
+    problem: 'Proyecto personal para explorar el desarrollo fullstack con una identidad visual fuerte y funcionalidades de comunidad anónima.',
+    solution: 'Plataforma web con autenticación, publicaciones, sistema de respuestas y estética cyberpunk oscura construida de cero como proyecto de portafolio.',
+    image: weltschmerzImg,
+    demo: 'https://weltschmerz-s2ar.vercel.app/',
+    code: 'https://github.com/GriffithBtGrl/weltschmerz',
+    year: '2025',
+  },
+  {
+    id: 3,
+    title: 'Matcargo — Plataforma logística para empresa de transportes',
+    tags: ['React', 'Node.js', 'PostgreSQL', 'Vite'],
+    problem: 'La empresa necesitaba digitalizar su operación logística y tener visibilidad en tiempo real sobre sus envíos y clientes.',
+    solution: 'Plataforma web fullstack con panel de administración, gestión de envíos y sistema de seguimiento. Actualmente en desarrollo.',
+    image: matcargoImg,
+    demo: 'https://matcargo.vercel.app/',
+    code: null, // Proyecto privado de cliente
+    year: '2025',
+    badge: 'en desarrollo', // Quitar cuando esté lista
+  },
 ]
 
 function GridPlaceholder() {
@@ -80,8 +103,30 @@ function ProjectCard({ project, index }) {
         transition: 'border-color var(--transition), box-shadow var(--transition), transform var(--transition)',
         transform: hovered ? 'translateY(-4px)' : 'none',
         boxShadow: hovered ? '0 0 32px var(--cyan-glow)' : 'none',
+        position: 'relative',
       }}
     >
+      {/* Badge "en desarrollo" si aplica */}
+      {project.badge && (
+        <div style={{
+          position: 'absolute',
+          top: '1rem',
+          right: '1rem',
+          zIndex: 2,
+          fontFamily: 'var(--font-mono)',
+          fontSize: '0.58rem',
+          letterSpacing: '0.1em',
+          textTransform: 'uppercase',
+          color: 'var(--magenta)',
+          background: 'var(--magenta-dim)',
+          border: '1px solid var(--magenta-glow)',
+          padding: '0.25rem 0.6rem',
+          borderRadius: '2px',
+        }}>
+          {project.badge}
+        </div>
+      )}
+
       {project.image
         ? <img src={project.image} alt={project.title} style={{ width: '100%', aspectRatio: '16/9', objectFit: 'cover' }} />
         : <GridPlaceholder />
@@ -129,8 +174,27 @@ function ProjectCard({ project, index }) {
         </p>
 
         <div style={{ display: 'flex', gap: '0.75rem' }}>
-          <a href={project.demo} target="_blank" rel="noreferrer" className="btn btn-primary" style={{ padding: '0.55rem 1rem', fontSize: '0.68rem' }}>ver proyecto</a>
-          <a href={project.code} target="_blank" rel="noreferrer" className="btn btn-ghost"   style={{ padding: '0.55rem 1rem', fontSize: '0.68rem' }}>ver código</a>
+          <a
+            href={project.demo}
+            target="_blank"
+            rel="noreferrer"
+            className="btn btn-primary"
+            style={{ padding: '0.55rem 1rem', fontSize: '0.68rem' }}
+          >
+            ver proyecto
+          </a>
+          {/* Solo muestra "ver código" si hay link */}
+          {project.code && (
+            <a
+              href={project.code}
+              target="_blank"
+              rel="noreferrer"
+              className="btn btn-ghost"
+              style={{ padding: '0.55rem 1rem', fontSize: '0.68rem' }}
+            >
+              ver código
+            </a>
+          )}
         </div>
       </div>
     </motion.article>
