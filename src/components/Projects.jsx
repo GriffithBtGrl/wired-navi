@@ -8,6 +8,18 @@ import matcargoImg from '../assets/matcargo.jpg'
 const projects = [
   {
     id: 1,
+    title: 'Matcargo — Plataforma logística para empresa de transportes',
+    tags: ['React', 'Node.js', 'PostgreSQL', 'Vite'],
+    problem: 'La empresa necesitaba digitalizar su operación logística y tener visibilidad en tiempo real sobre sus envíos y clientes.',
+    solution: 'Plataforma web fullstack con panel de administración, gestión de envíos y sistema de seguimiento. Actualmente en desarrollo.',
+    image: matcargoImg,
+    demo: 'https://matcargo.vercel.app/',
+    code: null, // Proyecto privado de cliente
+    year: '2025',
+    badge: 'en desarrollo', // Quitar cuando esté lista
+  },
+  {
+    id: 2,
     title: 'Sistema de captación de clientes para entrenador personal',
     tags: ['HTML', 'CSS', 'JavaScript', 'SEO'],
     problem: 'El negocio no contaba con una estructura digital clara para captar clientes, lo que generaba pérdida constante de oportunidades y baja conversión.',
@@ -18,7 +30,7 @@ const projects = [
     year: '2025',
   },
   {
-    id: 2,
+    id: 3,
     title: 'Weltschmerz — Foro anónimo dark cyberpunk',
     tags: ['React', 'Node.js', 'PostgreSQL', 'Express'],
     problem: 'Proyecto personal para explorar el desarrollo fullstack con una identidad visual fuerte y funcionalidades de comunidad anónima.',
@@ -27,18 +39,6 @@ const projects = [
     demo: 'https://weltschmerz-s2ar.vercel.app/',
     code: 'https://github.com/GriffithBtGrl/weltschmerz',
     year: '2025',
-  },
-  {
-    id: 3,
-    title: 'Matcargo — Plataforma logística para empresa de transportes',
-    tags: ['React', 'Node.js', 'PostgreSQL', 'Vite'],
-    problem: 'La empresa necesitaba digitalizar su operación logística y tener visibilidad en tiempo real sobre sus envíos y clientes.',
-    solution: 'Plataforma web fullstack con panel de administración, gestión de envíos y sistema de seguimiento. Actualmente en desarrollo.',
-    image: matcargoImg,
-    demo: 'https://matcargo.vercel.app/',
-    code: null, // Proyecto privado de cliente
-    year: '2025',
-    badge: 'en desarrollo', // Quitar cuando esté lista
   },
 ]
 
@@ -83,7 +83,7 @@ function GridPlaceholder() {
 }
 
 function ProjectCard({ project, index }) {
-  const ref    = useRef(null)
+  const ref = useRef(null)
   const inView = useInView(ref, { once: true, margin: '-60px' })
   const [hovered, setHovered] = useState(false)
 
@@ -202,7 +202,7 @@ function ProjectCard({ project, index }) {
 }
 
 export default function Projects() {
-  const ref    = useRef(null)
+  const ref = useRef(null)
   const inView = useInView(ref, { once: true })
 
   return (
