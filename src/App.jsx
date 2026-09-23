@@ -5,6 +5,12 @@ import Hero from './components/Hero'
 import Projects from './components/Projects'
 import About from './components/About'
 import Contact from './components/Contact'
+import WhyItMatters from './components/WhyItMatters'
+import Method from './components/Method'
+import Pricing from './components/Pricing'
+import Conditions from './components/Conditions'
+import JapaneseBackground from './components/JapaneseBackground'
+
 
 function CustomCursor() {
   const cursorRef = useRef(null)
@@ -42,10 +48,15 @@ function CustomCursor() {
 export default function App() {
   return (
     <>
+      <JapaneseBackground />
       <CustomCursor />
       <Navbar />
-      <main>
+      <main style={{ position: 'relative', zIndex: 1 }}>  
         <Hero />
+        <WhyItMatters />
+        <Method />
+        <Pricing />
+        <Conditions />
         <Projects />
         <About />
         <Contact />
