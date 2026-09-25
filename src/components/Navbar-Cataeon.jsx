@@ -1,4 +1,4 @@
-// Navbar.jsx
+// Navbar.jsx.
 import { useState, useEffect } from 'react'
 
 const FORM_LINK = '#'
@@ -68,12 +68,8 @@ export default function Navbar() {
               onClick={() => setMenuOpen(v => !v)}
               className="burger-btn"
               style={{
-                background: 'none', 
-                border: 'none', 
-                padding: '0.25rem',
-                // display: 'flex', 
-                flexDirection: 'column', 
-                gap: '5px',
+                background: 'none', border: 'none', padding: '0.25rem',
+                display: 'flex', flexDirection: 'column', gap: '5px',
                 zIndex: 101,
               }}
             >

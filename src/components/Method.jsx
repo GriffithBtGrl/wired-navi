@@ -1,4 +1,4 @@
-// Method.jsx — Con glass effect.
+// Method.jsx —.
 import { useRef } from 'react'
 import { motion, useInView } from 'framer-motion'
 
@@ -36,7 +36,7 @@ export default function Method() {
   const inView = useInView(ref, { once: true, margin: '-80px' })
 
   return (
-    <section ref={ref} style={{ padding: 'clamp(5rem, 10vw, 9rem) 0', borderTop: '1px solid var(--border)' }}>
+    <section id="metodo" ref={ref} style={{ padding: 'clamp(5rem, 10vw, 9rem) 0', borderTop: '1px solid var(--border)' }}>
       <div className="container">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
