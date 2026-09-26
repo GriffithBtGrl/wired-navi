@@ -1,7 +1,7 @@
 // Navbar.jsx
 import { useState, useEffect } from 'react'
 
-const FORM_LINK = '#'
+const FORM_LINK = '/brief'
 
 const links = [
   { label: 'método', href: '#metodo' },

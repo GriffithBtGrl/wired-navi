@@ -1,9 +1,7 @@
-// Conditions.jsx — CTA + tablero de condiciones con glass effect.
 import { useRef } from 'react'
 import { motion, useInView } from 'framer-motion'
 
-const FORM_LINK = '#' // ✏️ Reemplaza con tu link de Tally
-
+const FORM_LINK = '/brief' 
 const glass = {
   background: 'rgba(15, 15, 21, 0.55)',
   backdropFilter: 'blur(12px)',
