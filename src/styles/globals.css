@@ -41,7 +41,6 @@ body {
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
 }
 
-/* Cursor */
 * { cursor: none !important; }
 .custom-cursor {
   position: fixed;
@@ -124,20 +123,18 @@ img { display: block; max-width: 100%; }
 }
 .section-tag::before { content: '//'; opacity: 0.5; }
 
-/* ══════════════════════════════════════
-   NAVBAR
-══════════════════════════════════════ */
+/* ── Navbar ── */
 .desktop-nav  { display: flex; }
 .desktop-cta  { display: inline-flex; }
 .burger-btn   { display: none !important; }
 
 /* ══════════════════════════════════════
-   MOBILE
+   MOBILE — max-width: 768px
 ══════════════════════════════════════ */
 @media (max-width: 768px) {
   .container { padding: 0 1.25rem; }
 
-  /* Cursor off en touch */
+  /* Cursor off */
   .custom-cursor { display: none !important; }
   * { cursor: auto !important; }
   a, button { pointer-events: auto !important; }
@@ -147,14 +144,30 @@ img { display: block; max-width: 100%; }
   .desktop-cta { display: none !important; }
   .burger-btn  { display: flex !important; }
 
-  /* Hero — fuerza 1 columna aunque tenga style inline */
+  /* Hero — 1 columna */
   .hero-grid {
     display: grid !important;
     grid-template-columns: 1fr !important;
     gap: 2rem !important;
   }
 
-  /* Method */
+  /* Hero stats — wrap limpio */
+  .hero-stats {
+    flex-wrap: wrap !important;
+    gap: 1rem 0 !important;
+  }
+  .hero-stats > div {
+    flex: 1 1 33% !important;
+    min-width: 0 !important;
+    padding-left: 0.75rem !important;
+    padding-right: 0.75rem !important;
+    border-right: none !important;
+  }
+  .hero-stats > div:first-child {
+    padding-left: 0 !important;
+  }
+
+  /* Method — 1 columna */
   .method-grid {
     display: grid !important;
     grid-template-columns: 1fr !important;
@@ -178,41 +191,22 @@ img { display: block; max-width: 100%; }
     flex-direction: column !important;
     align-items: flex-start !important;
   }
+  .conditions-cta .btn {
+    width: 100% !important;
+    justify-content: center !important;
+  }
+
+  /* Pricing — auto-fit ya maneja esto, por si acaso */
+  .pricing-grid {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+  }
 
   /* About */
   .about-grid {
     display: grid !important;
     grid-template-columns: 1fr !important;
     gap: 2rem !important;
-  }
-
-  /* Pricing */
-  .pricing-grid {
-    display: grid !important;
-    grid-template-columns: 1fr !important;
-  }
-
-  /* Hero botones */
-  .hero-buttons {
-    flex-direction: column !important;
-    width: 100% !important;
-  }
-  .hero-buttons .btn {
-    width: 100% !important;
-    justify-content: center !important;
-  }
-
-  /* Hero stats */
-  .hero-stats {
-    overflow-x: auto;
-    padding-bottom: 0.5rem;
-    flex-wrap: nowrap !important;
-  }
-  .hero-stats > div {
-    min-width: 90px;
-    flex-shrink: 0;
-    padding-left: 0.75rem !important;
-    padding-right: 0.75rem !important;
   }
 
   /* Footer */
@@ -222,11 +216,22 @@ img { display: block; max-width: 100%; }
     gap: 0.5rem !important;
   }
 
-  /* Texto general más legible en mobile */
-  h1 { font-size: clamp(2rem, 10vw, 3rem) !important; }
-  h2 { font-size: clamp(1.5rem, 7vw, 2rem) !important; }
+  /* Texto general */
+  h1 { word-break: break-word; }
+  h2 { word-break: break-word; }
 }
 
 @media (max-width: 480px) {
-  .hero-stats > div { min-width: 80px; }
+  .hero-stats > div {
+    flex: 1 1 100% !important;
+    border-right: none !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 0.75rem !important;
+    margin-bottom: 0.25rem;
+  }
+  .hero-stats > div:last-child {
+    border-bottom: none !important;
+  }
 }
