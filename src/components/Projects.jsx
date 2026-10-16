@@ -3,7 +3,7 @@ import { useState, useRef } from 'react'
 import { motion, useInView } from 'framer-motion'
 import richardImg from '../assets/httpsrichardpereznetlifyapp.jpeg'
 import weltschmerzImg from '../assets/weltschmerz.jpg'
-import matcargoImg from '../assets/matcargo.jpg'
+import gothCoffeeImg from '../assets/gothcoffee.jpg'
 
 const glass = {
   background: 'rgba(15, 15, 21, 0.55)',
@@ -34,17 +34,17 @@ const projects = [
     code: null,
     year: '2025',
   },
-  {
+   {
     id: 3,
-    title: 'Matcargo — Plataforma logística para empresa de transportes',
-    tags: ['React', 'Node.js', 'PostgreSQL', 'Vite'],
-    problem: 'La empresa necesitaba digitalizar su operación logística y tener visibilidad en tiempo real sobre sus envíos y clientes.',
-    solution: 'Plataforma web fullstack con panel de administración, gestión de envíos y sistema de seguimiento. Actualmente en desarrollo.',
-    image: matcargoImg,
-    demo: 'https://matcargo.vercel.app/',
+    title: 'Goth Coffee — E-commerce de café de especialidad',
+    tags: ['React', 'Node.js', 'PostgreSQL', 'Three.js'],
+    problem: 'Proyecto de ejemplo para demostrar cómo construyo una tienda online completa, con identidad visual propia y flujo de compra real.',
+    solution: 'Tienda full-stack con catálogo y variantes de producto, carrito, checkout con Webpay Plus (ambiente de pruebas), panel de administración para productos y pedidos, imágenes en Cloudinary y hero 3D con Three.js.',
+    image: gothCoffeeImg,
+    demo: 'https://goth-coffee.vercel.app/',
     code: null,
-    year: '2025',
-    badge: 'en desarrollo',
+    year: '2026',
+    badge: 'ejemplo',
   },
 ]
 
