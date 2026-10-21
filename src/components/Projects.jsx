@@ -2,7 +2,7 @@
 import { useState, useRef } from 'react'
 import { motion, useInView } from 'framer-motion'
 import richardImg from '../assets/httpsrichardpereznetlifyapp.jpeg'
-import weltschmerzImg from '../assets/weltschmerz.jpg'
+import cyberInkImg from '../assets/cyber-ink.png'
 import gothCoffeeImg from '../assets/gothcoffee.jpg'
 
 const glass = {
@@ -20,19 +20,21 @@ const projects = [
     solution: 'Página optimizada para captación de clientes, con estructura enfocada en conversión, integración de contacto directo y mejora del flujo de decisión del usuario.',
     image: richardImg,
     demo: 'https://richardperez.netlify.app/',
-    code: 'https://github.com/GriffithBtGrl/richard-perez-preparador-fisico',
+    // code: 'https://github.com/GriffithBtGrl/richard-perez-preparador-fisico',
+    code: null,
     year: '2025',
   },
   {
     id: 2,
-    title: 'Weltschmerz — Foro anónimo dark cyberpunk',
-    tags: ['React', 'Node.js', 'PostgreSQL', 'Express'],
-    problem: 'Proyecto personal para explorar el desarrollo fullstack con una identidad visual fuerte y funcionalidades de comunidad anónima.',
-    solution: 'Plataforma web con autenticación, publicaciones, sistema de respuestas y estética cyberpunk oscura construida de cero como proyecto de portafolio.',
-    image: weltschmerzImg,
-    demo: 'https://weltschmerz-s2ar.vercel.app/',
+    title: 'Cyber Ink — Web para estudio de tatuajes',
+    tags: ['React', 'Framer Motion', 'Node.js', 'PostgreSQL'],
+    problem: 'Un tatuador necesita mostrar su estilo, publicar sus diseños disponibles y recibir solicitudes de hora sin responder lo mismo una y otra vez por mensaje directo.',
+    solution: 'Web con identidad visual alternativa, animaciones y líneas neotribal que se dibujan con el scroll. Incluye catálogo de trabajos y diseños, formulario de agenda con imagen de referencia y un panel privado para gestionar solicitudes y contenido.',
+    image: cyberInkImg,
+    demo: 'https://cyber-ink-dusky.vercel.app/',
     code: null,
-    year: '2025',
+    year: '2026',
+    badge: 'ejemplo',
   },
    {
     id: 3,
