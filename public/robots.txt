@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://wired-navi.vercel.app/sitemap.xml
+Sitemap: https://www.wirednavi.com/sitemap.xml
